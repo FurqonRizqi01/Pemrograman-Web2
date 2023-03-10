@@ -59,11 +59,9 @@
                 <label for="program_studi" class="col-4 col-form-label">Program Studi</label> 
                 <div class="col-8">
                 <select id="program_studi" name="program_studi" class="custom-select" required="required">
-                    
                     <?php foreach($program_studi as $key => $value){ ?>
                     <option value="<?= $key; ?>"><?= $value; ?></option>
                     <?php }?>
-        
                 </select>
                 </div>
             </div>
@@ -71,7 +69,7 @@
                 <label class="col-4">Skill Programming</label> 
                 <div class="col-8">
                     
-                    <?php foreach($skills as $key => $value){ ?>
+                    <?php foreach ($skills as $key => $value) { ?>
                         <div class="custom-control custom-checkbox custom-control-inline">
                             <input name="skill[]" id="<?= $key; ?>" type="checkbox" class="custom-control-input" value="<?= $key; ?>"> 
                             <label for="<?= $key; ?>" class="custom-control-label"><?= $key; ?></label>
@@ -95,7 +93,8 @@
                 <th>Domisili</th>
                 <th>Program Studi</th>
                 <th>Skill Programming</th>
-
+                <th>Score</th>
+                <th>Predikat</th>
             </tr>
             <?php
             if(isset($_POST['submit'])){
@@ -116,9 +115,10 @@
                 <td><?= $domisili; ?></td>
                 <td><?= $program_studi; ?></td>
                 <td>
-                    <?php foreach ($skills as $skill){
+                    <?php foreach($skills as $skill){
                         echo $skill;
-                    } ?></td>
+                    } ?>
+                </td>
             </tr>
             <?php } ?>
         </table>
